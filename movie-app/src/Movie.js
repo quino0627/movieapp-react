@@ -3,10 +3,11 @@ import "./Movie.css";
 
 class Movie extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
-        <MoviePoster />
-        <h1>hello this is a movie</h1>
+        <MoviePoster poster={this.props.poster} />
+        <h1>{this.props.title}</h1>
       </div>
     );
   }
@@ -14,9 +15,8 @@ class Movie extends Component {
 
 class MoviePoster extends Component {
   render() {
-    return (
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/On_Your_Wedding_Day.jpg/220px-On_Your_Wedding_Day.jpg" />
-    );
+    console.log(this.props);
+    return <img src={this.props.poster} />;
   }
 }
 
