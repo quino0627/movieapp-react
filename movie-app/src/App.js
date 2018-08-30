@@ -3,34 +3,33 @@ import React, { Component } from "react";
 import "./App.css";
 import Movie from "./Movie";
 
-const movies = [
-  {
-    title: "너의 결혼식",
-    poster:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/On_Your_Wedding_Day.jpg/220px-On_Your_Wedding_Day.jpg"
-  },
-  {
-    title: "신과 함께",
-    poster:
-      "https://upload.wikimedia.org/wikipedia/ko/9/97/신과_함께_-_인과_연.png"
-  },
-  {
-    title: "앤트맨",
-    poster: "https://upload.wikimedia.org/wikipedia/ko/b/b4/앤트맨.jpg"
-  },
-  {
-    title: "미션임파서블",
-    poster:
-      "https://upload.wikimedia.org/wikipedia/ko/6/6d/미션_임파서블_로그네이션.jpg"
-  }
-];
 class App extends Component {
   //Render : componentWillMount() -> render() -> componentDidMount()
   //Update : componentWillReceiveProps() -> shouldComponentUpdate() ->
   //->componentWillUpdate() -> render() ->componentDidUpdate
 
   state = {
-    greeting: "Hello!"
+    movies: [
+      {
+        title: "너의 결혼식",
+        poster:
+          "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/On_Your_Wedding_Day.jpg/220px-On_Your_Wedding_Day.jpg"
+      },
+      {
+        title: "신과 함께",
+        poster:
+          "https://upload.wikimedia.org/wikipedia/ko/9/97/신과_함께_-_인과_연.png"
+      },
+      {
+        title: "앤트맨",
+        poster: "https://upload.wikimedia.org/wikipedia/ko/b/b4/앤트맨.jpg"
+      },
+      {
+        title: "미션임파서블",
+        poster:
+          "https://upload.wikimedia.org/wikipedia/ko/6/6d/미션_임파서블_로그네이션.jpg"
+      }
+    ]
   };
 
   componentWillMount() {
@@ -41,9 +40,16 @@ class App extends Component {
     //console.log("Did Mount");
     setTimeout(() => {
       this.setState({
-        greeting: "Hello again!"
+        movies: [
+          {
+            title: "어벤져스",
+            poster:
+              "https://upload.wikimedia.org/wikipedia/ko/1/18/어벤져스.jpg"
+          },
+          ...this.state.movies
+        ]
       });
-    }, 5000);
+    }, 3000);
   }
 
   render() {
@@ -51,8 +57,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {this.state.greeting}
-        {movies.map((movie, index) => {
+        {this.state.movies.map((movie, index) => {
           return (
             <Movie title={movie.title} poster={movie.poster} key={index} />
           );
