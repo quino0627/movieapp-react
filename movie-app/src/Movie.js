@@ -37,6 +37,10 @@ function Movie({ title, poster }) {
   );
 }
 
+function SAMPle({
+  const movie = 1
+})
+
 Movie.propTypes = {
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired
