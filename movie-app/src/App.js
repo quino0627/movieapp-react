@@ -15,37 +15,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    //console.log("Did Mount");
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title: "너의 결혼식",
-            poster:
-              "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/On_Your_Wedding_Day.jpg/220px-On_Your_Wedding_Day.jpg"
-          },
-          {
-            title: "신과 함께",
-            poster:
-              "https://upload.wikimedia.org/wikipedia/ko/9/97/신과_함께_-_인과_연.png"
-          },
-          {
-            title: "앤트맨",
-            poster: "https://upload.wikimedia.org/wikipedia/ko/b/b4/앤트맨.jpg"
-          },
-          {
-            title: "미션임파서블",
-            poster:
-              "https://upload.wikimedia.org/wikipedia/ko/6/6d/미션_임파서블_로그네이션.jpg"
-          },
-          {
-            title: "어벤져스",
-            poster:
-              "https://upload.wikimedia.org/wikipedia/ko/1/18/어벤져스.jpg"
-          }
-        ]
-      });
-    }, 3000);
+    fetch("https://yts.am/api/v2/list_movies.json?sort_by=rating");
+    //console.log(fetch("https://yts.am/api/v2/list_movies.json?sort_by=rating"));
   }
 
   _renderMovies = () => {
