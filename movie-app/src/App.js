@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
 import "./App.css";
 import Movie from "./Movie";
+
+//블렉스박스, 쉐도우 포자션relative정도의 css
 
 class App extends Component {
   //Render : componentWillMount() -> render() -> componentDidMount()
@@ -42,7 +43,7 @@ class App extends Component {
   };
 
   _callApi = () => {
-    return fetch("https://yts.am/api/v2/list_movies.json?sort_by=rating")
+    return fetch("https://yts.am/api/v2/list_movies.json?sort_by=download_count")
     .then(potato => potato.json())
     .then(json => json.data.movies) //화살표 표시는 리턴작성할필요없음 모던js라서 자동임
     .catch(err => console.log(err))
@@ -50,10 +51,11 @@ class App extends Component {
 
   render() {
     // console.log("Did render");
-
+    const { movies } = this.state;
     return (
-      <div className="App">
-        {this.state.movies ? this._renderMovies() : "loading"}
+      
+      <div className={movies ? "App" : "App-loading"}>
+        {movies ? this._renderMovies() : "loading"}
       </div>
     );
   }
