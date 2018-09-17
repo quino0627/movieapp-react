@@ -58,9 +58,8 @@
 }
 
 .Movie .Movie__Synopsis{
-    font-size: 12px;
-    font-weight: 200;
     margin-top: 10px;
+    color:#B4B5BD;
 }
 
 @media screen and (min-width:320px) and (max-width:667px) and (orientation: portrait){
