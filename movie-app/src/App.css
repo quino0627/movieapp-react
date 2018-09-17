@@ -1,13 +1,13 @@
 .App {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 0 0 50px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0 0 50px;
+  flex-wrap: wrap;
 }
 
-.App-loading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100%
+.App-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
