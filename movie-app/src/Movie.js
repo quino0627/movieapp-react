@@ -40,16 +40,17 @@ function Movie({ title, poster, genres, synopsis }) {
         <div className="Movie__Genres">
           {genres.map((genre,index) => <MovieGenre genre = {genre} key = {index}/>)}
         </div>
-      </div>
-      <div className="Movie__Synopsis">
-      <LinesEllipsis
-        text={synopsis}
-        maxLine='3'
-        ellipsos=' ...'
-        trimRight
-        basedOn='letters'
+        <div className="Movie__Synopsis">
+        <LinesEllipsis
+          text={synopsis}
+          maxLine='3'
+          ellipsos=' ...'
+          trimRight
+          basedOn='letters'
         /> 
       </div>
+      </div>
+      
          
     </div>
   );

@@ -1,14 +1,73 @@
+.Movie{
+    background-color: white;
+    width: 45%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* text-overflow: ellipsis; */
+    box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
+    padding: 10px 0;
+}
+
+.Movie__Columns{
+    width: 30%;
+}
+.Movie h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Movie__Columns:last-child{
+    width: 60%
+}
+
+.Movie .Movie__Poster{
+    width: 100%;
+    position: relative;
+    top: -20px;
+    box-shadow: -10px 19px 38px rgba(83, 83, 83, 0.3), 10px 15px 12px rgba(80,80,80,0.22);
+    transition: width .3s , top .3s ease-in-out
+}
+
+.Movie__Poster:hover{
+    width: 103%;
+    top: -22px;
+
+}
 @media screen and (min-width:320px) and (max-width:667px){
     .Movie{
         width: 100%
     }
 }
 
+.Movie .Movie__Genres{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.Movie__Genres .Movie__Genre{
+    font-size: 14px;
+    font-weight: 200;
+    background-color: #eeeeee;
+    padding:0 5px;
+    margin: 1px 2px;
+
+}
+
+.Movie .Movie__Synopsis{
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 10px;
+}
 
 @media screen and (min-width:320px) and (max-width:667px) and (orientation: portrait){
     .Movie{
         width: 100%;
         flex-direction: column;
+        
     }
     .Movie__Poster{
         top:0;
